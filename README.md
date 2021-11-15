@@ -4,9 +4,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directory, you can run `npm install`, to install all dependecies then: 
+- npm start 
+- npm test
 
-### key scripts: `npm start` `npm test` `npm build`
+***You may be asked to allow your browser to get your location. Addiotanal refresh after that may be needed***
 
 ## Most important packages used:
 
@@ -20,3 +22,4 @@ In the project directory, you can run:
 - Better testing and typization
 - Better local state managment
 - Error handling / loading incitators
+- Responsiveness 
