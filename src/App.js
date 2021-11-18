@@ -66,6 +66,7 @@ type CityCards = {
   setSideMenuOpen: Function,
   classes: Object,
 }
+
 const renderCityCards = (props: CityCards) => {
   const {
     geolocationData,

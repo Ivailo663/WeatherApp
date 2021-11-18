@@ -4,7 +4,6 @@ import React from 'react'
 import DayCard from '../DayCard'
 import HourCard from '../HourCard'
 
-import makeStyles from './CarouselList.styles'
 import Carousel from 'react-elastic-carousel'
 
 //convets data into chunks of day arrays
@@ -33,8 +32,6 @@ type Props = {
 const CarouselList = (props: Props) => {
   const { data: dataProp, location } = props
 
-  const classes = makeStyles()
-
   if (
     !dataProp[location] ||
     !dataProp[location].data ||
@@ -49,19 +46,17 @@ const CarouselList = (props: Props) => {
   return (
     <Carousel itemsToShow={1} showArrows={false} initialActiveIndex={0}>
       {normalizedData.map((element, index) => (
-        <div className={classes.root} key={`dayId_${index.toString()}`}>
-          <DayCard key={`dayId_${index.toString()}`} element={element}>
-            {element.map((day, dayIndex) => (
-              <HourCard
-                key={`hourId_${dayIndex.toString()}`}
-                hour={day.dt_txt.substring(day.dt_txt.indexOf(' ') + 1)}
-                temp={day.main.temp}
-                humidity={day.main.humidity}
-                feelsLike={day.main.feels_like}
-              />
-            ))}
-          </DayCard>
-        </div>
+        <DayCard key={`dayId_${index.toString()}`} element={element}>
+          {element.map((day, dayIndex) => (
+            <HourCard
+              key={`hourId_${dayIndex.toString()}`}
+              hour={day.dt_txt.substring(day.dt_txt.indexOf(' ') + 1)}
+              temp={day.main.temp}
+              humidity={day.main.humidity}
+              feelsLike={day.main.feels_like}
+            />
+          ))}
+        </DayCard>
       ))}
     </Carousel>
   )

@@ -3,7 +3,6 @@ import { cx } from '@emotion/css'
 import IconButton from '../IconButton'
 import makeStyles from './SideMenu.styles'
 import { CgClose as IconClose } from 'react-icons/cg'
-import { useEffect } from 'react/cjs/react.development'
 
 type Props = {
   onClose: Function,
